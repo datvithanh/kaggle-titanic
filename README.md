@@ -1,8 +1,9 @@
 # kaggle-titanic
+first run
 ```
 cd src
 ```
-uncomment any model you like and comment the rest then run
+uncomment any model and comment the rest then run
 ```
 python main.py
 ```

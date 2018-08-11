@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from preprocess import preprocess
 import logistic_regression
 import svm
+import random_forest
 
 train = pd.read_csv('../data/train.csv')
 holdout = pd.read_csv('../data/test.csv')
@@ -17,7 +18,8 @@ all_y = train['Survived']
 holdout_X = all.iloc[891:]
 
 # holdout_predictions = logistic_regression.model(all_X, all_y, holdout_X)
-holdout_predictions = svm.model(all_X, all_y, holdout_X)
+# holdout_predictions = svm.model(all_X, all_y, holdout_X)
+holdout_predictions = random_forest.model(all_X, all_y, holdout_X)
 
 holdout_ids = holdout["PassengerId"]
 submission_df = {"PassengerId": holdout_ids,
